@@ -164,88 +164,42 @@ $(document).ready(function() {
 	}
 
 
-	var liveShowSliderArgs = {
-		slidesPerView: 1,
-		spaceBetween: 15,
-		speed: 400,
-		loop: true,
-		effect: 'fade',
-		fadeEffect: {
-			crossFade: true
-		}
+	
+
+	var congressGallerySliderInit = $('.js-congress-gallery-slider');
+
+	if (congressGallerySliderInit.length > 0) {
+
+		congressGallerySliderInit.each(function() {
+			var self = $(this);
+
+			var congressGallerylider = new Swiper(this, {
+				slidesPerView: 'auto',
+				centeredSlides: false,
+				spaceBetween: 20,
+				loop: true,
+				speed: 600,
+				navigation: {
+					nextEl: this.parentNode.querySelector('.js-congress-gallery-slider-btn-next'),
+					prevEl: this.parentNode.querySelector('.js-congress-gallery-slider-btn-prev'),
+				},
+				
+				breakpoints: {
+					620: {
+						slidesPerView: 'auto',
+						centeredSlides: true,
+						spaceBetween: 50,
+					}
+				}
+			});
+
+		});
+
 	}
 	
-	var liveShowSlider_2 = new Swiper('.js-live-show-slider-2', liveShowSliderArgs);
-	var liveShowSlider_3 = new Swiper('.js-live-show-slider-3', liveShowSliderArgs);
-
-
-	var liveShowSlider_1 = new Swiper('.js-live-show-slider-1', {
-		slidesPerView: 1,
-		spaceBetween: 15,
-		speed: 400,
-		loop: true,
-		effect: 'fade',
-		fadeEffect: {
-			crossFade: true
-		},
-		navigation: {
-			nextEl: '.js-live-show-slider-btn-next',
-			prevEl: '.js-live-show-slider-btn-prev',
-		},
-
-		on: {
-			slideChange: function() {
-				liveShowSlider_2.slideNext();
-				liveShowSlider_3.slideNext();
-			}
-		}
-
-
-
-	});
-
-
-	var liveShowSlider_mobile = new Swiper('.js-live-show-slider-mobile', {
-		slidesPerView: 'auto',
-		spaceBetween: 30,
-		speed: 400,
-		loop: true,
-
-		navigation: {
-			nextEl: '.js-live-show-slider-mobile-btn-next',
-			prevEl: '.js-live-show-slider-mobile-btn-prev',
-		}
-
-
-	});
 
 
 	
-
-
-
-
-
-
-	var congressGallerylider = new Swiper('.js-congress-gallery-slider', {
-		slidesPerView: 'auto',
-		centeredSlides: false,
-		spaceBetween: 20,
-		loop: true,
-		speed: 600,
-		navigation: {
-			nextEl: '.js-congress-gallery-slider-btn-next',
-			prevEl: '.js-congress-gallery-slider-btn-prev',
-		},
-		
-		breakpoints: {
-			620: {
-				slidesPerView: 'auto',
-				centeredSlides: true,
-				spaceBetween: 50,
-			}
-		}
-	});
 
 
 	$('[data-fancybox]').fancybox({

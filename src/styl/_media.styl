@@ -15,6 +15,11 @@
 		
 		.slider-navigation
 			left 760px
+			
++max-screen(1720px)
+	.sect__promo
+		background-position bottom left -400px
+		
 
 
 +max-screen(1200px)
@@ -30,6 +35,7 @@
 		&.is-fixed
 			background-color $basic-white-color
 			box-shadow 0 0 10px 10px rgba(0,0,0, .05)
+			
 	.header__row
 		padding-right 0
 	.nav
@@ -87,9 +93,18 @@
 	.header-tools
 		margin-right 10px
 		
+	.speaker-book
+		.row
+			flex-wrap wrap
+			
+		&__text
+			max-width 100%
+			margin-bottom 40px
+		
 
 	// Promo
 	.sect__promo
+		background-position bottom left -600px
 		.container
 			padding-left 0
 			padding-right 0
@@ -97,7 +112,6 @@
 	.promo-block
 		padding-left 20px
 		padding-right 20px
-		padding-top 120px
 		&:before
 			display none
 			
@@ -105,16 +119,17 @@
 			margin-bottom 50px
 			
 		&__img
-			width 100%
-			margin-right -200px
+			left auto
+			right -140px
+			
+		&__content
+			> .row
+				justify-content flex-start
 			
 	.promo-form
 		&__row
 			flex-wrap wrap
 			
-
-			
-		
 		&__col
 			max-width 100%
 			flex none
@@ -188,35 +203,10 @@
 		width 700px
 		
 
-	// imax
-	.imax-advantage__wrapper
-		width 50%
+
 		
 
-
-	.prices-package__wrapper
-		width 50%
-		
-
-	// contacts
-	.contacts
-		&__row
-			flex-wrap wrap
-		&-img
-			max-width 100%
-			flex none
-			order 1
-			margin-bottom 50px
-		&-information
-			padding-right 0
-			
-			display flex
-			justify-content space-between
-			width 100%
-			order 2
-			&__date
-				margin-top 0
-				margin-left 30px
+	
 				
 		
 
@@ -241,27 +231,7 @@
 			height 6px
 			
 
-	// live show
-	.live-show__col
-		width 50%
-		&:last-child
-			padding-top 0
-			position relative
-			z-index 1
-			margin-top -200px
-			.live-show-slide
-				height auto
-				padding-top 100%
-			
-	.live-show__row
-		flex-wrap wrap
-		
-
-	.live-show__title
-		position relative
-		left auto
-		margin-bottom 40px
-		
+	
 
 	// Schedule
 	.congress-schedule
@@ -274,7 +244,11 @@
 					font-size 20px
 					
 
-	
+	.congress-schedule__subtitle
+		font-size 28px
+		
+	.congress-schedule__step
+		font-size 120px
 				
 
 	// footer
@@ -300,6 +274,42 @@
 	.prices-title__brazil
 		font-size 100px
 
+
+	.promo-block-bestseller
+		display none
+		
+	.congress-advantages__row
+		flex-wrap wrap
+		flex-direction column
+	.congress-advantage
+		width 100%
+		max-width 75%
+		
+
+	.contacts
+		&__row
+			flex-wrap wrap
+		&-information
+			width 100%
+			flex none
+			
+			margin-top 60px
+			
+			&__img
+				flex none
+				padding-top 0
+				position relative
+				img
+					position relative
+					top auto
+					left auto
+					transform none
+					width 100%
+			
+	.price-block
+		flex none
+		margin 0 auto
+		
 			
 +max-screen(767px)
 	// PRomo
@@ -360,8 +370,9 @@
 	.sect__promo
 		position relative
 		overflow hidden
-		
 		background-color $basic-white-color
+		background-position top left
+		background-size 700px
 		&:before
 			z-index 1
 			pseudo()
@@ -376,12 +387,14 @@
 			background linear-gradient(0deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%)
 			
 	.promo-block
-		padding-top 90px
 		&__img
-			top 60px
+			top 40px
 			bottom auto
 			width 600px
 			right 50px
+			
+		&__content
+			padding-top 420px
 			
 	.promo-speaker
 		margin-bottom 450px
@@ -401,60 +414,7 @@
 		
 	.sect__congress:before
 		top -90px
-	// live show
-	.live-show-slider
-		display none
-		&__mobile
-			display block
-			position relative
-			padding-top 70px
-			.slider-navigation
-				float none
-				position absolute
-				top 0
-				left 0
-				margin-top 0
-				
-				&__btn
-					background-color $accent-color
-					box-shadow  0px 14px 26px -16px rgba(3,70,255,0.94)
-					svg
-						fill $basic-white-color
-			.swiper-slide
-				width 215px
-				opacity 1
-				
-				.thumbnail
-					padding-top 0
-					height auto
-					position relative
-					display block
-					img
-						position relative
-						transform none
-						top auto
-						left auto
-						
-			
-	.live-show
-		margin-bottom 50px
-		&__wrapper
-			padding-bottom 100px
-			.form-block
-				text-align center
-		&__col
-			width 100%
-			margin-bottom 0
-			display none
-			&:nth-child(2)
-				display block
-				padding-top 0
-			p
-				margin-top 0
-				margin-bottom 30px
-				font-size 14px
-				max-width 250px
-			
+	
 				
 
 	.form__wrapper
@@ -498,30 +458,13 @@
 		width 100%
 		
 
-	// imax
-	.sect__imax
-		padding-top 70px
-		
-
-	// imax
-	.imax-advantage__wrapper
-		width 100%
-		margin-bottom 30px
-		&:last-child
-			margin-bottom 0
-			
-
-	.imax__entering
-		padding-top 50px
-		img
-			width 400px
-			
-	.imax__entering
-		margin-bottom 50px
+	
 		
 	// Prices
-	.sect__prices
-		padding-top 70px
+	.sect__prices,
+	.sect__portfolio
+		padding 70px 0
+		
 		
 
 	.prices-package__wrapper
@@ -571,6 +514,24 @@
 	.congress-gallery__title
 		font-size 36px
 		line-height 1.25
+		
+
+	.congress-gallery__title
+		margin-bottom 60px
+		
+
+	.speaker-book
+		font-size 16px
+		.sect-title
+			font-size 36px
+			line-height 1.25
+			
+
+
+	.congress-schedule__title
+		padding-left 0
+		font-size 40px
+		margin-bottom 50px
 		
 
 
@@ -651,10 +612,7 @@
 				width 100%
 				transform translateX(20px)
 				
-	.ola
-		left -25px
-		top -62.5px
-		transform none !important
+	
 		
 	.advantages
 		padding-top 135px
@@ -702,7 +660,11 @@
 			
 
 
-	
+	.congress-schedule__wrapper
+		padding-top 0
+		
+	.speaker-book .form-block
+		margin-top 60px
 
 
 	.congress-gallery
@@ -826,6 +788,16 @@
 	.sect__contacts
 		padding-top 90px
 		padding-bottom 65px
+		
+
+	.contacts-information__item--col
+		width 100%
+		margin-bottom 40px
+		&:last-child
+			margin-bottom 0
+			
+
+
 
 				
 +max-screen(540px)
@@ -951,15 +923,20 @@
 		font-size 45px
 	
 
-	.congress-gallery__slider
-		margin-top -14px
-		
 
 	// imax
 	.imax__entering
 		padding-top 50px
 		img
 			width 340px
+			
+
+	.congress-advantage
+		max-width 100%
+	
+
+	.price-block
+		width 100%
 		
 			
 +max-screen(364px)

@@ -3,7 +3,7 @@
 	background-size cover
 	&__blue
 		background-image url('../img/backgrounds/blue-decor.jpg')
-		background-size 100% 1750px
+		background-size 100% 950px
 		background-position top center
 		
 	&__grey
@@ -14,38 +14,60 @@
 
 .sect__promo
 	overflow hidden
+	background url('../img/backgrounds/promo-bg.png') bottom left no-repeat / auto 100%
 
 .promo-block
 	position relative
-	background-color $basic-white-color
-	min-height 740px
-	padding 165px 30px 25px 0
 	
-	&:before
-		pseudo()
-		position absolute
-		right 100%
-		top 0
-		bottom 0
-		width 10000%
-		background-color inherit
-		margin-right -2px
+	
+	&__text
+		max-width 660px
+		margin-bottom 55px
 		
+		ol
+			counter-reset list
+			li
+				font 23px $SemiBold
+				margin-bottom 30px
+				padding-left 50px
+				position relative
+				max-width 400px
+				&:last-child
+					margin-bottom 0
+				&:before
+					counter-increment list
+					content counter(list)
+					color $accent-color
+					display inline-block
+					position absolute
+					line-height 1
+					font 40px $Eng
+					top -10px
+					left 0
+
 	&__content
+		padding 165px 0 25px
 		position relative
 		z-index 1
+		display flex
+		flex-direction column
+		justify-content space-between
+		align-items center
+		min-height 740px
+		.row
+			width 100%
 	&__img
 		display block
 		position absolute
-		right 0
+		left -100px
 		bottom 0
-		width 680px
+		width 670px
 		pointer-events none
 		
 	&__title
-		font 46px $SemiBold
+		font 53px $SemiBold
 		line-height 1.15
-		margin-bottom 35px
+		margin-bottom 50px
 		span
 			color $accent-color
 			
@@ -56,7 +78,7 @@
 		
 .promo-form__col
 	width 100%
-	max-width 780px
+	max-width 720px
 	
 	.btn
 		padding-left 10px
@@ -78,27 +100,95 @@
 
 .congress-info
 	position relative
-	&__date
-		position absolute
-		horisontal-center()
-		bottom 100%
-		margin-bottom 45px
-		text-align center
-		font 30px $SemiBold
-		white-space nowrap
-		span
-			display block
-			color $secondary-color
-			line-height 1
-			font 79px $Eng
-	&__city
-		background-color #12151f
-		flex-col-center()
-		font 43px $SemiBold
-		line-height 1
-		padding 15px 50px
-		height 100px
+	flex 1
+	width 100%
+	max-width 390px
+	&__block
+		border-radius 25px
+		background-color $secondary-color
+		display flex
+		align-items center
+		padding 7px 40px 7px 60px
+		width 100%
+		font-size 18px
 		color $basic-white-color
+		position relative
+		&--benefit
+			position absolute
+			min-width 250px
+			background-color $basic-white-color
+			white-space nowrap
+			display flex
+			align-items center
+			justify-content center
+			padding 9px
+			font 16px $Med
+			color $text-color
+			bottom 100%
+			right 20px
+			margin-bottom 25px
+			&:before
+				pseudo()
+				width 0
+				height 0
+				border-style solid
+				border-width 15px 15px 0 0
+				border-color $basic-white-color transparent transparent transparent
+				position absolute
+				top 100%
+				margin-top -1px
+				left 9px
+			
+			&_plus
+				flex-col-center()
+				width 30px
+				height 30px
+				background-color #f2f2f2
+				color #c2c2c2
+				font 20px $Bold
+				flex none
+				margin-right 12px
+		&--date
+			font 85px $Eng
+			line-height 1
+			display inline-block
+			margin-right 45px
+			
+		&--text
+			span
+				display block
+				padding-bottom 10px
+				margin-bottom 10px
+				border-bottom 1px solid $basic-white-color
+				&:last-child
+					padding-bottom 0
+					margin-bottom 0
+					border-bottom none
+					
+
+.promo-block-bestseller
+	padding-left 50px
+	position relative
+	margin-top 50px
+	img
+		display block
+		width 267px
+		vertical-center()
+		right 30px
+		position absolute
+		z-index -1
+	p
+		position relative
+		display inline-block
+		&:before
+			pseudo()
+			vertical-center()
+			position absolute
+			left 100%
+			width 108px
+			height 22px
+			margin-left 8px
+			background url('../img/book-arrow.png') no-repeat / contain
 
 
 // About
@@ -106,110 +196,86 @@
 	padding-top 130px
 	
 .about-speaker
-	&__text
-		max-width 750px
-		font-size 29px
-		margin 0 auto 45px auto
-		color $basic-white-color
-		p
-			padding-left 60px
-			
 	&__title
-	
-		margin-bottom 55px
-	
-		
-		span
-			color $secondary-color
-			
-	&__photo
+		margin-bottom 110px
 		position relative
-		display flex
-		justify-content flex-end
+		z-index 1
+		&:before
+			content attr(data-text)
+			font 146px $Eng
+			line-height 1
+			display inline-block
+			position absolute
+			z-index -1
+			white-space nowrap
+			mix-blend-mode soft-light
+			color rgba($basic-black-color, .15)
+			top -75px
+			left 0
+		
+		.sect-title
+			width 100%
+			max-width 800px
+			position relative
+			z-index 2
+			
+				
+	&__text
+		&--col
+			flex 1
+			width 100%
+			&:first-child
+				max-width 380px
+			&:last-child
+			
+				max-width 800px
+		p
+			margin-bottom 35px
+			&:last-child
+				margin-bottom 0
 	
 		img
-			max-width 760px
 			display block
 			border-radius 0 0 25px 25px
 			
-
-.ola
-	display inline-block
-	text-transform uppercase
-	color $secondary-color
-	font 177px $Eng
-	line-height 1
-	position absolute
-	left 0
-	vertical-center()
-	z-index 1
-	padding-bottom 45px
-	&:before
-		pseudo()
-		position absolute
-		bottom 0
-		left 20px
-		width 290px
-		height 10px
-		background-color $secondary-color
+.sect__about
+	.decor-wrapper__grey
+		margin-top -120px
+		padding-top 280px
 
 
-// ADvantage
-.sect__advantages
-	padding-top 170px
-	margin-top -90px
-	
-.advantages
-	padding-top 170px
-	margin-top -75px
-	
-	&__row
-		margin-left -45px
-		margin-right -45px
-	
-.advantage
-	font-size 18px
-	color $light-text-color
-	
-	&__title
-		color $accent-color
-		font 30px $SemiBold
-		margin-bottom 30px
-	&__wrapper
-		padding 0 45px 40px
+.speaker-book
+	.form-block
+		margin-top 120px
 		
-
-// live show
-.live-show
-	position relative
-	margin-bottom 60px
-	&__title
-		position absolute
-		left calc(33.33333% + 30px)
-		top 0
-		
-	.thumbnail
-		padding-top 105%
-	&__col
-		color $lighter-text-color
+	&__text
+		max-width 490px
+		position relative
 		font-size 18px
-		&:last-child,
-		&:nth-child(2)
-			padding-top 190px
-		&:last-child
-			.live-show-slider,
-			.swiper-container
-				height 100%
-			.thumbnail
-				padding-top 0
-				height 100%
 		
+		z-index 1
+		.sect-title
+			font-size 53px
+			margin-bottom 40px
+			
+			line-height 1.25
+			
+			
 		p
-			margin-top 45px
-			
-	&__wrapper
-		padding-bottom 180px
-			
+			color $light-text-color 
+			margin-bottom 20px
+			&:last-child
+				margin-bottom 0
+	&__img
+		flex 1
+		position relative
+		&:before
+			pseudo()
+		img
+			display block
+			position relative
+			z-index 1
+
 
 // congress
 .sect__congress
@@ -237,51 +303,67 @@
 
 
 .congress-schedule
-	border 1px solid $accent-color
 	padding 50px
-	
-	&__uptitle
-		font 24px $SemiBold
-		color $accent-color
-		line-height 1
-		margin-bottom 15px
+	background rgb(240,244,249)
+	background -moz-linear-gradient(180deg, rgba(240,244,249,1) 0%, rgba(234,244,248,1) 100%)
+	background -webkit-linear-gradient(180deg, rgba(240,244,249,1) 0%, rgba(234,244,248,1) 100%)
+	background linear-gradient(180deg, rgba(240,244,249,1) 0%, rgba(234,244,248,1) 100%)
+
 	&__title
 		text-transform uppercase
-		font 76px $Bold
-		line-height 1.1
-		margin-bottom 70px
+		font 140px $Eng
+		color #d1e5f3
+		line-height 1
+		margin-bottom 130px
+		text-align center
+		
 	&__subtitle
-		font 24px $SemiBold
-		margin-bottom 60px
-		margin-top -45px
+		font 36px $SemiBold
+		max-width 730px
+		
+	&__entering
+		position relative	
+		margin-bottom 50px
+		padding-right 240px
+		
+	&__step
+		color $accent-color
+		font 160px $Eng
+		display inline-block	
+		position absolute	
+		vertical-center()
+		right 0
+		z-index -1
+		
 	&__item
 		margin-bottom 50px
 		padding-bottom 50px
-		border-bottom 1px solid $accent-color
+		border-bottom 1px solid #d8dcdf
 		display flex
 		flex-wrap nowrap
-		align-items flex-start
-		color $light-text-color
+		align-items center
+		color $lighter-text-color
 		&--time
 			flex none
-			width 240px
+			width 190px
 			flex-col-center()
 			white-space nowrap
 			text-align center
-			height 80px
+			height 70px
 			background-color $accent-color
-			box-shadow  0px 14px 26px -16px rgba(3,70,255,0.94)
-			margin-right 40px
+			box-shadow  0px 14px 26px -16px rgba($accent-color,0.94)
+			margin-right 80px
 			border-radius 21px
 			color $basic-white-color
-			font 24px $SemiBold
+			font 20px $Eng
 			line-height 1
 		&--descr
 			
 			&_title
 				font 24px $SemiBold
 				color $text-color
-				margin-bottom 15px
+				p
+					margin-top 15px
 		&:last-child
 			margin-bottom 0
 			border-bottom none
@@ -309,7 +391,7 @@
 	&__title
 		font 52px $Bold
 		line-height 1.1
-		margin-bottom 35px
+		margin-bottom 110px
 		
 		&--col
 			.congress-gallery__text
@@ -340,51 +422,58 @@
 	color $lighter-text-color
 			
 // sect imax
-.sect__imax
-	padding 235px 0 180px
-	background $accent-color url('../img/backgrounds/cinema-bg.jpg') center bottom no-repeat / cover
+.sect__portfolio
+	background url('../img/backgrounds/blue-decor.jpg') 50% 50% no-repeat / cover
+	padding 200px 0
 	
-
-.imax
-	
-	&__entering
-		position relative
-		padding-top 130px
-		z-index 1
-		margin-bottom 100px
-		img
-			display block
-			max-width 870px
-			position absolute
-			top 0
-			z-index -1
-			horisontal-center()
-			
-	&__title
-		
-		
-		max-width 660px
-		margin 0 auto
+	.sect-title
+		margin-bottom 95px
+		text-align center
 		span
-			color $secondary-color
+			display inline-block	
+			text-align left
 			
-	&-advantages
-		margin-top 100px
-		&__row
-			margin-left -65px
-			margin-right -65px
-		
-	&-advantage
-		font 20px $SemiBold
-		position relative
+
+.congress-advantages
+	margin-top 20px
+	
+.congress-advantage
+	position relative	
+	font-size 21px
+	padding-top 155px
+	color $basic-white-color
+	&:before
+		pseudo()
+		position absolute	
+		background-position 50% 50%
+		background-size contain
+		background-repeat no-repeat
+		horisontal-center()
+	&:nth-child(1)
 		&:before
-			content '+'
-			display block
-			font-family $Reg
-			font-size 30px
-		&__wrapper
-			padding-left 65px
-			padding-right 65px
+			width 242px
+			height 191px
+			background-image url('../img/circles/1.png')
+			horisontal-center()
+			top 5px
+	&:nth-child(2)
+		&:before
+			width 124px
+			height 124px
+			background-image url('../img/circles/2.png')
+			top 70px
+	&:nth-child(3)
+		&:before
+			top 115px
+			width 80px
+			height 80px
+			background-image url('../img/circles/2.png')
+		
+	p
+		position relative	
+		z-index 1
+		
+
 			
 
 // Prices
@@ -458,7 +547,7 @@
 					top 1px
 					
 	&__price
-		color $secondary-color
+		color #f6c86b
 		white-space nowrap
 		font 64px $Eng
 		margin-bottom 10px
@@ -485,35 +574,72 @@
 		display flex
 		flex-direction column
 		
+
+		
+
+.price-block
+	width 410px
+	flex none
+	padding-left 25px
+	padding-right 25px
+		
 // Sect contcts
-.sect__contacts
-	padding-top 135px
+
+.sect__prices
 	padding-bottom 80px
 	
 .contacts__title
-	margin-bottom 75px
+	margin-bottom 55px
+	text-align center
+	font-size 50px
+	
 	
 .contacts
+	&__row
+		margin-left -25px
+		margin-right -25px
 	&-information
-		padding-right 30px
-		&__title
-			font 26px $SemiBold
-			margin-bottom 25px
-		&__address
+		padding-left 25px
+		padding-right 25px
+		flex 1
+		display flex
+		flex-direction column
+		justify-content space-between
+		&__row
+			margin-left -30px
+			margin-right -30px
+			margin-top 50px
+		&__item
+			position relative
+			overflow hidden
 			font-family $SemiBold
-			
-		&__date
-			font 64px $Eng
-			color $secondary-color
-			margin-top 80px
-			span
-				display block
-				color $basic-white-color
-				font 26px $SemiBold
-	&-img
-		max-width 760px
-		img
-			display block
+			height 70px
+			display flex
+			align-items center
+			padding 10px 25px
+			border-radius 21px
+			p
+				position relative
+				z-index 1
+			&--col
+				padding-left 30px
+				padding-right 30px
+			&:before
+				pseudo()
+				position absolute
+				fullSize()
+				background-color rgba($basic-white-color, .4)
+				mix-blend-mode overlay
+		&__content
+			flex 1
+			display flex
+			flex-direction column
+			justify-content space-between
+		
+		&__img
+			flex 1
+			padding-top 0
+			border-radius 25px
 			
 
 
