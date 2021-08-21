@@ -1,0 +1,39 @@
+.phone-link
+	display inline-block
+	width 70px
+	height 70px
+	flex none
+	position relative
+	border 1px solid $basic-black-color
+	border-radius 50%
+	margin-left 45px
+	&__ic
+		position absolute
+		position-center()
+		display block
+		border-radius 50%
+		background-color $accent-color
+		transition background-color .17s ease-in-out
+		width 50px
+		height 50px
+		
+		svg
+			svg()
+			width 30px
+			height 26px
+			fill $basic-white-color
+			position absolute
+			position-center()
+		
+	&:hover
+		border-color $accent-color
+		span
+			background-color $secondary-color
+			
+			svg
+				fill $basic-black-color
+				
+.fancy-link
+	display block
+	&:hover
+		opacity .85

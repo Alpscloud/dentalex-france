@@ -1,0 +1,32 @@
+.nav
+	&__item
+		display inline-block
+		margin-right 45px
+		&:last-child
+			margin-right 0
+	&__link
+		display inline-block
+		color $text-color
+		&:hover,
+		&.is-active
+			color $accent-color
+	
+
+	&__header
+		display none
+
+	&-overlay
+		position fixed
+		top 0
+		left 0
+		width 100%
+		height 100%
+		background-color rgba($basic-black-color, .8)
+		display none
+		
+
+	.phone
+		font 18px $SemiBold
+		color $text-color
+		display none
+		

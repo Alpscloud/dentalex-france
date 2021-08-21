@@ -1,0 +1,30 @@
+.footer
+	&__content
+		padding 40px 0
+		border-top 1px solid rgba($basic-white-color, .2)
+		color $basic-white-color
+		a
+			color inherit
+			display inline-block
+			position relative
+			white-space nowrap
+			img
+				display block
+				max-width 95px	
+				transition opacity .75s ease-in-out
+			&:before
+				content attr(data-text)
+				position absolute
+				display inline-block
+				top 100%
+				horisontal-center()
+				opacity .4
+				font-size 12px
+				margin-top 6px
+				transition color .17s ease-in-out
+			&:hover
+				color $secondary-color
+				img
+					opacity .85
+				&:before
+					color $basic-white-color

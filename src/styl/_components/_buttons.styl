@@ -1,0 +1,87 @@
+.btn
+	display inline-block
+	padding 27px 33px
+	font 16px $Med
+	line-height 1
+	text-align center
+	color $basic-white-color
+	transition all .17s ease-in-out
+	backface-visibility hidden
+	background-color $accent-color
+	border-radius 21px
+	box-shadow 0px 14px 26px -16px rgba(3,70,255,0.94)
+	
+	&:hover
+		background-color $secondary-color
+		color $basic-black-color
+		box-shadow none
+	
+	
+	&-light
+		color $text-color
+		background-color $basic-white-color
+		
+		
+	&-close
+		display inline-block
+		width 20px
+		height 20px
+		svg
+			svg()
+			fill $basic-black-color
+		&:hover
+			svg
+				fill $accent-color
+				
+	&-lg
+		padding 24px 50px
+		
+	&-wide
+		width 100%
+		padding-left 15px
+		padding-right 15px
+		
+	&-popup
+		width 100%
+		.btn
+			padding 24px 30px
+			width auto
+		
+	
+		
+
+	&-hamburger
+		display none
+		flex none
+		width 50px
+		height 50px
+		border-radius 50%
+		background-color $accent-color
+		position relative
+		transition background-color .17s ease-in-out
+		margin-left 30px
+		&:before
+			pseudo()
+			position absolute
+			position-center()
+			width 70px
+			height 70px
+			border-radius 50%
+			border 1px solid $basic-black-color
+		&__line
+			width 27px
+			height 2px
+			background-color $basic-white-color
+			border-radius 20px
+			display block
+			margin 6px auto
+			transition all 0.3s ease-in-out	
+		&.is-active
+			.btn__hamburger--line
+				&:nth-child(1)
+					transform translateY(8px) rotate(45deg)
+				&:nth-child(2)
+					opacity 0	
+				&:nth-child(3)
+					transform translateY(-8px) rotate(-45deg)
+		

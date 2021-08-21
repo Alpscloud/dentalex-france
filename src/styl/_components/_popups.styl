@@ -1,0 +1,65 @@
+.popup 
+	position fixed
+	position-center()
+	z-index 90
+	width 100%
+	height 100%
+	display none
+	&__overflow
+		position absolute
+		left 0
+		top 0
+		width 100%
+		backface-visibility hidden
+		-webkit-backface-visibility hidden
+		height 100%
+		overflow auto
+		box-sizing border-box
+		-webkit-overflow-scrolling touch
+		z-index 105
+		background-color rgba($popup-overlay-bg, $popup-overlay-opacity)
+		padding 10px
+		text-align center
+		white-space nowrap
+		&:before
+			pseudo()
+			vertical-align middle
+			width 0
+			height 100%
+	&__body
+		width 100%
+		max-width 380px
+		background-color $popup-body-bg
+		padding 50px 65px 65px
+		display inline-block
+		vertical-align middle
+		position relative
+		white-space normal
+		border-radius 36px
+		
+	&__title
+		font 20px $Med
+		line-height 1.4
+		margin-bottom 45px
+		
+	.btn-close
+		position absolute
+		top 20px
+		right 20px
+		
+		width 15px
+		height 15px
+		
+
+
+.thanks-title
+	font-size 32px
+	line-height 1.1
+	margin-bottom 15px
+	
+.thanks-text
+	font-size 14px
+	margin-bottom 80px
+	
+
+
