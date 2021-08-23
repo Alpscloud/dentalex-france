@@ -85,8 +85,12 @@
 		position relative
 		z-index 2
 		
+	.swiper-wrapper
+		align-items stretch
+		
 	.swiper-slide
 		width 810px
+		height auto
 	
 	.slider-navigation
 		z-index 2
@@ -100,6 +104,9 @@
 .speaker-slide
 	position relative
 	padding-bottom 63px
+	display flex
+	flex-direction column
+	height 100%
 	span
 		display inline-block
 		position absolute
@@ -119,6 +126,7 @@
 	&__title
 		font 30px $SemiBold
 		margin-bottom 30px
+		flex 1
 			
 
 .live-show-slider

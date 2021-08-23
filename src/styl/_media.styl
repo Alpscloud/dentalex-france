@@ -99,12 +99,28 @@
 			
 		&__text
 			max-width 100%
-			margin-bottom 40px
+			margin-bottom 120px
 		
 
 	// Promo
 	.sect__promo
-		background-position bottom left -600px
+		position relative
+		overflow hidden
+		background-color $basic-white-color
+		background-position top left
+		background-size 820px
+		&:before
+			z-index 1
+			pseudo()
+			position absolute
+			bottom 0
+			left 0
+			width 100%
+			height 60%
+			background rgba(255,255,255, .25)
+			background -moz-linear-gradient(0deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%)
+			background -webkit-linear-gradient(0deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%)
+			background linear-gradient(0deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%)
 		.container
 			padding-left 0
 			padding-right 0
@@ -121,14 +137,22 @@
 		&__img
 			left auto
 			right -140px
+			top 0
 			
 		&__content
+			align-items flex-start
 			> .row
 				justify-content flex-start
+				
+			.promo-block-bestseller
+				display none
 			
 	.promo-form
 		&__row
 			flex-wrap wrap
+			
+			.form__wrapper
+				margin-bottom 40px
 			
 		&__col
 			max-width 100%
@@ -146,6 +170,21 @@
 			transform none
 			top auto
 			left auto
+			
+		&__block
+			.congress-info__block--benefit
+				display none
+				
+	.congress-info__block--benefit_tablet
+		display flex
+		
+	.promo-block-bestseller__tablet
+		display block !important
+		padding-left 0
+		img
+			right auto
+			left 100%
+			margin-left 40px
 			
 	.promo-speaker
 		margin-bottom 30px
@@ -224,12 +263,6 @@
 	.about-speaker__photo img
 		max-width 540px
 		
-	.ola
-		font-size 110px
-		padding-bottom 25px
-		&:before
-			height 6px
-			
 
 	
 
@@ -275,8 +308,7 @@
 		font-size 100px
 
 
-	.promo-block-bestseller
-		display none
+
 		
 	.congress-advantages__row
 		flex-wrap wrap
@@ -327,9 +359,11 @@
 				text-align center
 				margin-top 0
 				margin-bottom 0
+				margin-top 30px
 				
 				
-
+	.sect__promo
+		background-size 900px
 	// ADvantages
 	.advantages
 		padding-bottom 50px
@@ -364,34 +398,35 @@
 
 	.prices-title__brazil
 		font-size 77px
+	
+	.about-speaker__text
+		flex-wrap wrap
+	.about-speaker__text--col
+		margin-bottom 35px
+		&:last-child
+			margin-bottom 0
+		&:first-child
+			width 100%
+			max-width 100%
+			flex none
+		&:last-child
+			width 100%
+			max-width 100%
+			flex none
 
 +max-screen(700px)
-	// Promo
 	.sect__promo
-		position relative
-		overflow hidden
-		background-color $basic-white-color
-		background-position top left
-		background-size 700px
+		background-size 800px
 		&:before
-			z-index 1
-			pseudo()
-			position absolute
-			bottom 0
-			left 0
-			width 100%
 			height 73%
-			background rgba(255,255,255, .25)
-			background -moz-linear-gradient(0deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%)
-			background -webkit-linear-gradient(0deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%)
-			background linear-gradient(0deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%)
+			
 			
 	.promo-block
 		&__img
 			top 40px
 			bottom auto
 			width 600px
-			right 50px
+			right 0
 			
 		&__content
 			padding-top 420px
@@ -533,7 +568,19 @@
 		font-size 40px
 		margin-bottom 50px
 		
+	.congress-schedule__entering
+		padding-right 0
+		
+	.congress-schedule__step
+		width 100px
+		height 100px
+		
 
+	.congress-schedule__subtitle
+		padding-left 0
+		font-size 22px
+		br
+			display none
 
 
 	.popup
@@ -595,10 +642,13 @@
 	.sect__about
 		padding-top 70px
 		
+	.about-speaker__title:before
+		font-size 55px
+		top -30px
+		
 	.about-speaker
 		&__text
 			font-size 14px
-			padding-left 30px
 			margin-bottom 85px
 			
 		&__title
@@ -797,7 +847,12 @@
 			margin-bottom 0
 			
 
-
+	.sect__about .decor-wrapper__grey
+		padding-top 130px
+		
+	.speaker-slide__title
+		font-size 14px
+		margin-bottom 10px
 
 				
 +max-screen(540px)
@@ -807,33 +862,29 @@
 	
 	// promo
 	.congress-info
-		
 		position absolute
 		top 80px
 		left 0
-		justify-content flex-start
 		width auto
-		flex-wrap wrap
-		flex-direction column
-		padding 0
+		padding-left 0
+		padding-right 0
+		&__block
+			flex-direction column
+			align-items center
+			text-align center
+			padding 20px 20px
+			border-radius 40px
+			&--date
+				margin-right 0
+				font-size 52px
+				margin-bottom 20px
+			&--text
+				font-size 14px
+				span
+					&:last-child
+						font-size 23px
+		
 	
-		&__date
-			font-size 12px
-			margin-right 0
-			text-align left
-			margin-bottom 10px
-			span
-				font-size 25px
-				
-		&__city
-			background-color transparent
-			border 1px solid $text-color
-			font-size 15px
-			color $text-color
-			width auto
-			height auto
-			padding 14px 20px
-			border-radius 12px
 			
 
 	.promo-speaker
@@ -848,34 +899,59 @@
 			
 	.sect__promo
 		&:before
-			height 49%
+			height 64.5%
 			
 	.promo-block
 		position relative
 		padding-top 0
 		min-height auto
-		padding-bottom 55px
+		padding-bottom 0
 		&__content
-			padding-top 200px
+			padding-top 320px
+			padding-bottom 80px
+			display block
+			
+			.form-block
+				padding-left 30px
+				
+
 	
 		
 		&__title
-			font-size 26px
-			margin-bottom 25px
+			font-size 27px
+			margin-bottom 20px
 			
 		&__subtitle
 			margin-bottom 35px
 			font-size 14px
 			
+		&__text
+			margin-bottom 25px
+			ol
+				li
+					font-size 14px
+					padding-left 30px
+					margin-bottom 20px
+					max-width 250px
+					&:before
+						font-size 21px
+						
+						top -3px
+			
 		&__img
 			width 400px
-			right -150px
+			right -80px
 			margin-right 0
-			top 30px
+			top 70px
 			
 		.btn
 			width auto
 			padding 24px 30px
+			
+			
+	.congress-info__block--benefit_tablet
+		margin-top 30px
+		font-size 16px
 			
 	.form__wrapper
 		display none
@@ -891,8 +967,9 @@
 			.btn
 				width 100%
 		.btn
-			width auto
-			padding 24px 30px
+			width 100%
+			max-width 230px
+			padding 24px 10px
 			
 		.btn-popup
 			margin-top 0
@@ -900,10 +977,26 @@
 			
 			
 			
-	// About
-	.about-speaker__title
-		margin-bottom 35px
+	.promo-block-bestseller__tablet
+		font-size 18px
+		display inline-block !important
+		img
+		
+			width 160px
+			margin-left 20px
+		
+		p
+			max-width 165px
+			line-height 1.2
+			&:before
+				width 65px
+				height 13px
+				margin-left -12px
 				
+
+	.phone-link__ic,
+	.btn-hamburger
+		background-color $secondary-color
 
 +max-screen(440px)
 	

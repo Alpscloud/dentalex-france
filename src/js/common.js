@@ -245,12 +245,48 @@ $(document).ready(function() {
 	});
 
 
+	var lettersAnim = $('.letters-animation');
+
+
+	var delay = 0.03;
+
+	lettersAnim.each(function() {
+		spanize($(this));
+
+	})
+	
+
+	function spanize(el, delay) {
+		var letters = el.html();
+		var spans = letters.replace(/(.)/g, '<span>$1</span>');
+
+		var animDelay = 0.03;
+
+
+
+		el.html(spans);
+
+
+		el.find('span').each(function() {
+			$(this).css('animation-delay', animDelay + 's');
+
+			animDelay += 0.02;
+		});
+	}
+
+
 
 	$("input[type=tel]").inputmask({"mask": "+38 (999) 999-9999","clearIncomplete": false});
 
 
 	setTimeout(function(){
 		$('body').addClass('is-loaded');
+		$('.congress-info__block--benefit').addClass('is-visible');
+		
+		setTimeout(function() {
+			$('.letters-animation').addClass('is-animated');
+		}, 1000)
+
 	}, 1200);
 
 

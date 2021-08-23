@@ -68,7 +68,7 @@
 		font 53px $SemiBold
 		line-height 1.15
 		margin-bottom 50px
-		span
+		b
 			color $accent-color
 			
 	&__subtitle
@@ -113,9 +113,12 @@
 		font-size 18px
 		color $basic-white-color
 		position relative
-		&--benefit
+		.congress-info__block--benefit
 			position absolute
-			min-width 250px
+			bottom 100%
+			right 20px
+		&--benefit
+			width 250px
 			background-color $basic-white-color
 			white-space nowrap
 			display flex
@@ -124,9 +127,10 @@
 			padding 9px
 			font 16px $Med
 			color $text-color
-			bottom 100%
-			right 20px
-			margin-bottom 25px
+			transition all .35s ease-in-out
+			transition-delay 1.2s
+			opacity 0
+			margin-bottom 0
 			&:before
 				pseudo()
 				width 0
@@ -138,6 +142,28 @@
 				top 100%
 				margin-top -1px
 				left 9px
+			&.is-visible
+				opacity 1
+				margin-bottom 25px
+			&_tablet
+				display none
+				transform translateY(15px)
+				margin-bottom 0
+				box-shadow 5px 5px 10px rgba($basic-black-color, .1)
+				&:before
+					top auto
+					bottom 100%
+					margin-top 0
+					margin-bottom -1px
+					border-width 15px  0 0 15px 
+					border-color  transparent transparent transparent $basic-white-color
+				&.is-visible
+					opacity 1
+					transform translateY(0)
+					margin-bottom 0
+					
+			
+			
 			
 			&_plus
 				flex-col-center()
@@ -170,6 +196,8 @@
 	padding-left 50px
 	position relative
 	margin-top 50px
+	&__tablet
+		display none
 	img
 		display block
 		width 267px
@@ -189,6 +217,16 @@
 			height 22px
 			margin-left 8px
 			background url('../img/book-arrow.png') no-repeat / contain
+			animation flying 1.6s linear infinite
+			
+
+@keyframes flying
+	0%
+		transform translate(-5px, -50%)
+	50%
+		transform translate(5px, -50%)
+	100%
+		transform translate(-5px, -50%)
 
 
 // About
@@ -271,6 +309,15 @@
 		position relative
 		&:before
 			pseudo()
+			position absolute
+			position-center()
+			margin-left 30px
+			margin-top -30px
+			width 110%
+			height 110%
+			background url('../img/circle.svg') no-repeat / contain
+		&:before
+			pseudo()
 		img
 			display block
 			position relative
@@ -327,13 +374,21 @@
 		padding-right 240px
 		
 	&__step
-		color $accent-color
-		font 160px $Eng
+		
+		width 195px
+		height 173px
+		background-position 50% 50%
+		background-repeat no-repeat
+		background-size contain
 		display inline-block	
 		position absolute	
-		vertical-center()
+		bottom -60px
 		right 0
 		z-index -1
+		&--1
+			background-image url('../img/1.svg')
+		&--2
+			background-image url('../img/2.svg')
 		
 	&__item
 		margin-bottom 50px
